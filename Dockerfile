@@ -1,16 +1,21 @@
 FROM node:20-alpine
 
+ENV NODE_ENV=production
+
 WORKDIR /usr/src/app
 
+# Copy only package metadata first to leverage Docker layer caching
 COPY package*.json ./
 
-RUN npm install --only=production
+# Install only production dependencies and clean npm cache to reduce image size
+RUN npm install --omit=dev && npm cache clean --force
 
-COPY . .
+# Copy only the files needed at runtime
+COPY index.js ./
 
 ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
 
