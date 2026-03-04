@@ -1,0 +1,19 @@
+{
+  "name": "simple-status-service",
+  "version": "1.0.0",
+  "description": "A simple Node.js service that responds with JSON: { status: \"ok\", message: \"service running\" }.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "status",
+    "service"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
