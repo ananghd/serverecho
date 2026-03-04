@@ -1,7 +1,7 @@
 {
-  "name": "simple-status-service",
+  "name": "server-echo",
   "version": "1.0.0",
-  "description": "A simple Node.js service that responds with JSON: { status: \"ok\", message: \"service running\" }.",
+  "description": "A simple Node.js service",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
